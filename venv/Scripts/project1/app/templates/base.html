@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Articles Project{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    <style>
+        body {
+            background-color: rgb(0, 0, 0);
+        }
+        .hed {
+            display: flex;
+            justify-content: center;
+        }
+        .content>h4 {
+            display: flex;
+            align-items: center;
+            background-color: rgb(32, 32, 190);
+            height: 100px;
+            width: 500px;
+            justify-content: center;
+            border-radius: 20px;
+        }
+        .content {
+            position: relative;
+            top: 20px;
+            padding-left: 30%;
+        }
+        .content>h2 {
+            padding-left: 70px;
+        }
+    </style>
+</head>
+<body style="color: beige;">
+    <header>
+        <div class="hed">
+            <h1>ARTICLES PROJECT</h1>
+        </div>
+        <div>
+            {% block navigation %}
+                {% include 'nav.html' %}
+            {% endblock %}
+        </div>
+    </header>
+    <div>
+        {% block main_content %}
+        
+                {% include 'contents.html' %}
+        {% endblock %}
+    </div>
+    <main style="text-align: center; padding-right: 24%">
+        <div class="content">           
+            {% block content %}
+               
+            {% endblock %}
+        </div>
+        
+    </main>
+    <footer style="text-align: center; padding-top: 20px;">
+        <h2>
+            Developed by python developers
+        </h2>
+    </footer>
+</body>
+</html>
+
